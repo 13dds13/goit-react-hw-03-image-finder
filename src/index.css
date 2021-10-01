@@ -40,6 +40,10 @@ img {
   height: auto;
 }
 
+.stopScrolling {
+  overflow-y: hidden;
+}
+
 /*
  * Стили компонента App
  */
