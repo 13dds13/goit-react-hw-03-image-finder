@@ -61,9 +61,7 @@ class App extends Component {
     this.getImages(query);
   };
 
-  onImgClick = (id) => {
-    const { images } = this.state;
-    const imgForModal = images.find((item) => item.id === id);
+  onImgClick = (imgForModal) => {
     this.setState({ modalData: imgForModal });
   };
 
@@ -103,7 +101,7 @@ class App extends Component {
             color="#1539ad"
             height={100}
             width={100}
-            timeout={10000}
+            timeout={5000}
           />
         )}
         <ImageGallery
@@ -113,7 +111,7 @@ class App extends Component {
           isLoading={isLoading}
         />
         {modalData && (
-          <Modal image={modalData} onModalClosing={this.onModalClosing} />
+          <Modal imageURL={modalData} onModalClosing={this.onModalClosing} />
         )}
       </>
     );

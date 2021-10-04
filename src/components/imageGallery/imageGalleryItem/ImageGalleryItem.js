@@ -6,9 +6,9 @@ const ImageGalleryItem = ({ images, onImgClick }) => {
     <li key={img.webformatURL} className="ImageGalleryItem">
       <img
         src={img.webformatURL}
-        alt={img.tag}
+        alt={img.tags}
         className="ImageGalleryItem-image"
-        onClick={() => onImgClick(img.id)}
+        onClick={() => onImgClick(img.largeImageURL)}
       />
     </li>
   ));
@@ -19,7 +19,7 @@ ImageGalleryItem.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       webformatURL: PropTypes.string,
-      tag: PropTypes.string,
+      tags: PropTypes.string,
       id: PropTypes.number,
     })
   ),

@@ -15,11 +15,11 @@ class Modal extends Component {
   }
 
   render() {
-    const { largeImageURL, tags } = this.props.image;
+    const { imageURL, onModalClosing } = this.props;
     return (
-      <div className="Overlay" onClick={this.props.onModalClosing}>
+      <div className="Overlay" onClick={onModalClosing}>
         <div className="Modal">
-          <img src={largeImageURL} alt={tags} />
+          <img src={imageURL} alt="large" />
         </div>
       </div>
     );
@@ -28,10 +28,7 @@ class Modal extends Component {
 
 Modal.propTypes = {
   onModalClosing: PropTypes.func,
-  image: PropTypes.shape({
-    largeImageURL: PropTypes.string,
-    tags: PropTypes.string,
-  }),
+  imageURL: PropTypes.string,
 };
 
 export default Modal;
